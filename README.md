@@ -1,1 +1,1 @@
-# Spring Data Rest Example #
+## Spring Data Rest Example
