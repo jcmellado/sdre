@@ -1,0 +1,169 @@
+databaseChangeLog:
+- changeSet:
+    id: 1498983508662-1
+    author: Juan (generated)
+    changes:
+    - createTable:
+        columns:
+        - column:
+            autoIncrement: true
+            constraints:
+              primaryKey: true
+              primaryKeyName: CommentPK
+            name: id
+            type: BIGINT
+        - column:
+            constraints:
+              nullable: false
+            name: customer_id
+            type: BIGINT
+        - column:
+            constraints:
+              nullable: false
+            name: pizza_id
+            type: BIGINT
+        - column:
+            name: rating
+            type: INT
+        - column:
+            constraints:
+              nullable: false
+            name: text
+            type: VARCHAR(255)
+        tableName: Comment
+- changeSet:
+    id: 1498983508662-2
+    author: Juan (generated)
+    changes:
+    - createTable:
+        columns:
+        - column:
+            autoIncrement: true
+            constraints:
+              primaryKey: true
+              primaryKeyName: CustomerPK
+            name: id
+            type: BIGINT
+        - column:
+            constraints:
+              nullable: false
+            name: email
+            type: VARCHAR(255)
+        - column:
+            constraints:
+              nullable: false
+            name: name
+            type: VARCHAR(255)
+        tableName: Customer
+- changeSet:
+    id: 1498983508662-3
+    author: Juan (generated)
+    changes:
+    - createTable:
+        columns:
+        - column:
+            autoIncrement: true
+            constraints:
+              primaryKey: true
+              primaryKeyName: IngredientPK
+            name: id
+            type: BIGINT
+        - column:
+            constraints:
+              nullable: false
+            name: name
+            type: VARCHAR(255)
+        tableName: Ingredient
+- changeSet:
+    id: 1498983508662-4
+    author: Juan (generated)
+    changes:
+    - createTable:
+        columns:
+        - column:
+            constraints:
+              nullable: false
+            name: pizza_id
+            type: BIGINT
+        - column:
+            constraints:
+              nullable: false
+            name: ingredient_id
+            type: BIGINT
+        tableName: Pizza_Ingredient
+- changeSet:
+    id: 1498983508662-5
+    author: Juan (generated)
+    changes:
+    - addColumn:
+        columns:
+        - column:
+            constraints:
+              nullable: false
+            name: price
+            type: decimal(19, 2)
+        tableName: Pizza
+- changeSet:
+    id: 1498983508662-6
+    author: Juan (generated)
+    changes:
+    - addPrimaryKey:
+        columnNames: pizza_id, ingredient_id
+        tableName: Pizza_Ingredient
+- changeSet:
+    id: 1498983508662-7
+    author: Juan (generated)
+    changes:
+    - addForeignKeyConstraint:
+        baseColumnNames: customer_id
+        baseTableName: Comment
+        constraintName: FKf4s6ibata0gaapquceup7uu1v
+        deferrable: false
+        initiallyDeferred: false
+        referencedColumnNames: id
+        referencedTableName: Customer
+- changeSet:
+    id: 1498983508662-8
+    author: Juan (generated)
+    changes:
+    - addForeignKeyConstraint:
+        baseColumnNames: ingredient_id
+        baseTableName: Pizza_Ingredient
+        constraintName: FKha0pjsajdnt6q4bci86g32mer
+        deferrable: false
+        initiallyDeferred: false
+        referencedColumnNames: id
+        referencedTableName: Ingredient
+- changeSet:
+    id: 1498983508662-9
+    author: Juan (generated)
+    changes:
+    - addForeignKeyConstraint:
+        baseColumnNames: pizza_id
+        baseTableName: Pizza_Ingredient
+        constraintName: FKluh5vd57s6edn8imjs3mfkjr7
+        deferrable: false
+        initiallyDeferred: false
+        referencedColumnNames: id
+        referencedTableName: Pizza
+- changeSet:
+    id: 1498983508662-10
+    author: Juan (generated)
+    changes:
+    - addForeignKeyConstraint:
+        baseColumnNames: pizza_id
+        baseTableName: Comment
+        constraintName: FKmbn1mm0o79v91uli4y91ayomj
+        deferrable: false
+        initiallyDeferred: false
+        referencedColumnNames: id
+        referencedTableName: Pizza
+- changeSet:
+    id: 1498983508662-11
+    author: Juan (generated)
+    changes:
+    - addNotNullConstraint:
+        columnDataType: varchar(255)
+        columnName: name
+        tableName: Pizza
+

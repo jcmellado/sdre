@@ -1,3 +1,16 @@
+Pruebas de concepto con las siguientes tecnologías:
+- Java
+- Spring Boot
+- Spring Data JPA
+- Spring Data REST
+- Hibernate
+- Liquibase
+- Lombok
+- Tomcat
+- Jetty
+- MySQL
+- Docker
+
 
 Cada versión de los fuentes incluye una nueva característica. Y cada versión tiene una página propia en la [wiki](https://github.com/jcmellado/sdre/wiki) donde se explica en detalle los cambios realizados.
 

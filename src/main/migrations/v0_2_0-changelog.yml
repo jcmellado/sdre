@@ -1,3 +1,6 @@
 databaseChangeLog:
 - include:
     file: src/main/migrations/v0_2_0_001-changelog.yml
+- include:
+    file: src/main/migrations/v0_2_0_002-changelog.yml
+    
