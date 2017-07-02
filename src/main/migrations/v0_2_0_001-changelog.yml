@@ -1,0 +1,18 @@
+databaseChangeLog:
+- changeSet:
+    id: 1498973265832-1
+    author: Juan (generated)
+    changes:
+    - createTable:
+        columns:
+        - column:
+            autoIncrement: true
+            constraints:
+              primaryKey: true
+              primaryKeyName: PizzaPK
+            name: id
+            type: BIGINT
+        - column:
+            name: name
+            type: VARCHAR(255)
+        tableName: Pizza
