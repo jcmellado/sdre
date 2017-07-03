@@ -1,8 +1,8 @@
 package sdre.repository;
 
-import org.springframework.data.repository.CrudRepository;
+import org.springframework.data.repository.PagingAndSortingRepository;
 
 import sdre.domain.Pizza;
 
-public interface PizzaRepository extends CrudRepository<Pizza, Long> {
+public interface PizzaRepository extends PagingAndSortingRepository<Pizza, Long> {
 }
