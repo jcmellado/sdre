@@ -1,0 +1,14 @@
+databaseChangeLog:
+- changeSet:
+    id: 1499118955342-1
+    author: Juan (generated)
+    changes:
+    - addColumn:
+        columns:
+        - column:
+            constraints:
+              nullable: false
+            name: date
+            type: datetime
+        tableName: Comment
+

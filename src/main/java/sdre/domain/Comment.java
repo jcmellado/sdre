@@ -1,11 +1,15 @@
 package sdre.domain;
 
+import java.util.Date;
+
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
+import javax.persistence.Temporal;
+import javax.persistence.TemporalType;
 
 import lombok.Getter;
 import lombok.NoArgsConstructor;
@@ -19,6 +23,8 @@ public @NoArgsConstructor @Getter @Setter class Comment {
   private @Column(name = "customer_id", nullable = false) Long customerId;
 
   private @Column(name = "pizza_id", nullable = false) Long pizzaId;
+
+  private @Column(nullable = false) @Temporal(TemporalType.TIMESTAMP) Date date;
 
   private @Column(nullable = false) String text;
 
