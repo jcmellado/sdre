@@ -26,9 +26,9 @@ public @NoArgsConstructor @Getter @Setter class Pizza {
 
   private @Column(nullable = false) BigDecimal price;
 
-  private @OneToMany(mappedBy = "pizza") Set<Comment> comments = new HashSet<>();
-
   @JoinTable(name = "Pizza_Ingredient", joinColumns = @JoinColumn(name = "pizza_id", referencedColumnName = "id"),
       inverseJoinColumns = @JoinColumn(name = "ingredient_id", referencedColumnName = "id"))
   private @ManyToMany Set<Ingredient> ingredients = new HashSet<>();
+
+  private @OneToMany(mappedBy = "pizza") Set<Comment> comments = new HashSet<>();
 }
